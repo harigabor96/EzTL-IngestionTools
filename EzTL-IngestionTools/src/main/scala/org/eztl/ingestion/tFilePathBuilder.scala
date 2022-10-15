@@ -2,6 +2,6 @@ package org.eztl.ingestion
 
 trait tFilePathBuilder {
 
-  def getDayPattern(previousDaysOpt: Option[Int]): String
+  def getDayPattern(previousDays: Option[Int]): String
 
 }

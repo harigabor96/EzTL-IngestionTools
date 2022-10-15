@@ -6,14 +6,14 @@ import scala.collection.mutable.ListBuffer
 
 object FilePathBuilder extends tFilePathBuilder {
 
-  override def getDayPattern(previousDaysOpt: Option[Int]): String = {
-    val previousDays = previousDaysOpt.getOrElse(return "{*}")
+  override def getDayPattern(previousDays: Option[Int]): String = {
+    val pd = previousDays.getOrElse(return "{*}")
 
-    if (previousDays < 0) throw new Exception("Previous day count must be 0 or greater!")
+    if (pd < 0) throw new Exception("Previous day count must be 0 or greater!")
 
     val today = LocalDate.now()
 
-    s"{${getDateRange(today.minusDays(previousDays), today).mkString(",")}}"
+    s"{${getDateRange(today.minusDays(pd), today).mkString(",")}}"
   }
 
   private def getDateRange(startDate: LocalDate, endDate: LocalDate): List[String] = {
