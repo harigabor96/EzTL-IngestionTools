@@ -6,7 +6,7 @@ import java.time.LocalDate
 import java.time.temporal.ChronoUnit
 import scala.collection.mutable.ListBuffer
 
-object FilePathHelper extends tFilePathHelper {
+object FilePathHelper extends GenericFilePathHelper {
 
   override def _get_path_part(partFromBack: Int)(path: String): String = {
     if (path == "") throw new Exception("Path cannot be empty!")

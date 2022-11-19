@@ -3,7 +3,7 @@ package org.eztl.ingestion
 import org.apache.spark.sql.expressions.UserDefinedFunction
 import org.apache.spark.sql.functions.udf
 
-trait tFilePathHelper {
+trait GenericFilePathHelper {
 
   //Create day level date pattern for ingestion input path
   def createDayPattern(previousDays: Option[Int]): String
